@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.body {
+    display: flex;
+    height: 100vh;
+    overflow-x: hidden; 
+}
+
+
+.flex {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Левая часть */
+#right-area {
+    width: 60%; 
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#right-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+#right-area:hover img {
+    transform: scale(1.1);
+}
+
+/* Правая часть (форма) */
+#left-area {
+    width: 50%; 
+    height: 100vh;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
+    padding: 0;
+    background: #fff;
+}
+
+/* Контейнер для логотипа и заголовка */
+.header-container {
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 250px; 
+    background-color: #3a3a3a;
+}
+
+/* Логотип */
+.logo {
+    width: 100px;
+    margin-left: 550px; 
+    background-color: #3a3a3a;
+    display: flex;
+    justify-content: center;
+     align-items: center;
+}
+.logo img {
+    width: 150%;
+    height: auto;
+}
+
+/* Заголовок */
+.al h1 {
+    text-align: left; 
+    font-size: 24px;
+
+    color: #ffffff; 
+    background-color: #3a3a3a;
+}
+
+/* Контейнер формы */
+.inner-form {
+    margin: 0;
+    margin-right: 500px;
+    max-width: 400px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.row {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #218838;
+}
+
+
+.alertMsg, .successMsg {
+    font-size: inherit;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 5%;
+    left: 2%;
+    right: 2%;
+    max-width: 400px;
+    border-radius: 10px;
+    z-index: 999;
+    height: auto;
+    display: none;
+    cursor: pointer;
+}
+
+.alertMsg {
+    color: red;
+    background-color: rgba(255, 228, 228, 0.75);
+    box-shadow: 0px 0 10px 0px rgba(205, 30, 11, 0.5);
+}
+
+.successMsg {
+    color: green;
+    background-color: rgba(218, 249, 223, 0.75);
+    box-shadow: 0px 0 10px 0px rgba(11, 205, 61, 0.5);
+}
+
+.alertMsg i, .successMsg i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+
+@keyframes showFromLeft {
+    0% { opacity: 0; margin-left: -100%; }
+    100% { opacity: 1; margin-left: 0; }
+}
+
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; 
+    }
+
+    #right-area {
+        width: 100%;
+        height: 40vh;
+    }
+
+    #left-area {
+        width: 100%;
+        height: 60vh;
+        padding: 20px;
+    }
+
+    .inner-form {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    input {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
+
+
+
+
+
+
+
+.campaigns-page {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    padding: 20px;
+}
+
+.inside-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#spinner {
+    display: none;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.date-picker-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.header input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+    transition: border 0.3s ease-in-out;
+    appearance: none;
+    position: relative;
+}
+
+.header input[type="date"]::before {
+    content: "📅";
+    position: absolute;
+    right: 10px;
+    pointer-events: none;
+}
+
+.header input[type="date"]:hover,
+.header input[type="date"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.wrapper {
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.table {
+    overflow-x: auto;
+    border-radius: 8px;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f7f7f7;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th.id, td.id {
+    text-align: center;
+}
+
+.actions {
+    text-align: center;
+}
+
+.actions a {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.actions a:hover {
+    text-decoration: underline;
+}
+
+.empty {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
